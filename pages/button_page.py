@@ -1,9 +1,6 @@
 from locators.buttons_questions_click import ButtonsClick
 from pages.base_page import BasePage
 import allure
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions
-from locators.base_page_locators import BasePageLocators
 from urls import Urls
 
 @allure.step('Вытаскиваем по номеру и возвращаем локаторы вопросов')
@@ -19,7 +16,7 @@ class ButtonPage(BasePage):
 
     @allure.step('Ожидаем появления заголовка страницы Дзен')
     def wait_for_title(self):
-        self.wait_for_title_is('Дзен')
+        self.wait_for_title_is(Urls.DZEN_URL)
 
     @allure.step('Ищем вопросы, раскрываем их и фиксируем ответы')
     def click_and_get_answer(self, number):

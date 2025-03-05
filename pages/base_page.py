@@ -20,13 +20,9 @@ class BasePage:
         WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)
 
-    @allure.step('Ожидание появления заголовка на странице')
-    def wait_for_title_is(self, title):
-        WebDriverWait(self.driver, 10).until(expected_conditions.title_is(title))
-
     @allure.step('Дожидаемся смены URL страницы')
     def wait_url_changes(self, url):
-        WebDriverWait(self.driver, 10).until(expected_conditions.url_changes(url))
+       WebDriverWait(self.driver, 10).until(expected_conditions.url_changes(url))
 
     @allure.step('Кликаем по элементу с нужным локатором')
     def click(self, locator):
@@ -41,13 +37,3 @@ class BasePage:
     @allure.step('Нажимаем на кнопку  Куки все уже привыкли')
     def cookie_click(self):
         self.click(BasePageLocators.ACCEPT_COOKIE_BUTTON)
-
-
-
-
-
-
-   # @allure.step('Ввести значение в поле ввода')
-    #def set_text_to_elm(self, locator, text):
-     #   element = self.wait_and_find_element(locator)
-      #  element.send_keys(text)

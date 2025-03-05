@@ -21,16 +21,15 @@ class TestHomePageQuestions:
         assert button_page.click_and_get_answer(number).text == question
 
 
-class YandexScooter:
     @allure.title('Проверка перехода на страницу Дзена после нажатия на лого Яндекса')
     @allure.description('Нажимаем на лого Яндекса и проверяем, что новое окно — Яндекс Дзен')
     def test_transition_yandex(self, driver):
         button_page = ButtonPage(driver)
         button_page.cookie_click()
         button_page.yandex_logo_button_click()
-        button_page.switch_driver()
-        button_page.wait_for_title()
-        assert '/dzen' in button_page.get_current_url()
+        expected_url = "https://dzen.ru/?yredirect=true"
+        button_page.wait_url_changes(expected_url)
+        assert expected_url == Urls.DZEN_URL
 
     @allure.title('Проверка нажатия на логотип "Самокат"')
     @allure.description('Проверка перехода на главную страницу при нажатии на логотип "Самокат"')
@@ -39,15 +38,3 @@ class YandexScooter:
         button_page.order_upper_button_click()
         button_page.scooter_logo_button_click()
         assert driver.current_url == Urls.SCOOTER_URL
-
-
-
-
-
-
-
-
-
-
-
-

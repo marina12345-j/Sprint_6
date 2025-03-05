@@ -24,14 +24,15 @@ class OrderForm(BasePage):
         address_input = self.wait_and_find_element(NameAddress.FIELD_ADDRESS)
         address_input.send_keys(address)
 
-    @allure.step('Находим поле Метро')
-    def metro_field(self):
-        self.wait_and_find_element(NameAddress.METRO_STATION).click()
+    @allure.step('Заполняем станцию метро')
+    def choose_station(self,):
+        station_input = self.wait_and_find_element(NameAddress.METRO_STATION)
+        station_input.click()
 
     @allure.step('Выбираем станцию метро')
-    def choose_station(self, station):
-        selected_station = self.wait_and_find_element(NameAddress.SELECTED_STATION)
-        selected_station.send_keys(station).click()
+    def choose_station_click(self):
+        station_input_click = self.wait_and_find_element(NameAddress.SELECTED_STATION)
+        station_input_click.click()
 
     @allure.step('Заполняем поле Номер')
     def set_phone_input(self, phone):
