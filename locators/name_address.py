@@ -6,7 +6,6 @@ from locators.base_page_locators import BasePageLocators
 class NameAddress(BasePageLocators):
 
 
-
     FIELD_NAME = (By.XPATH, "//div[@class='Order_Form__17u6u']/div[@class='Input_InputContainer__3NykH']/input[@placeholder='* Имя']") #  поле Имя
     FIELD_LAST_NAME = (By.XPATH, "//div[@class='Order_Form__17u6u']/div[@class='Input_InputContainer__3NykH']/input[@placeholder='* Фамилия']") # поле Фамилия
     FIELD_ADDRESS = (By.XPATH, "//div[@class='Order_Form__17u6u']/div[@class='Input_InputContainer__3NykH']/input[@placeholder='* Адрес: куда привезти заказ']") # поле Адрес
