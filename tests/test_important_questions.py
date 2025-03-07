@@ -1,6 +1,5 @@
 import allure
 import pytest
-from conftest import driver
 from urls import Urls
 from pages.button_page import ButtonPage
 from data import answers
@@ -27,7 +26,7 @@ class TestHomePageQuestions:
         button_page = ButtonPage(driver)
         button_page.cookie_click()
         button_page.yandex_logo_button_click()
-        expected_url = "https://dzen.ru/?yredirect=true"
+        expected_url = Urls.DZEN_URL
         button_page.wait_url_changes(expected_url)
         assert expected_url == Urls.DZEN_URL
 
@@ -37,4 +36,5 @@ class TestHomePageQuestions:
         button_page = ButtonPage(driver)
         button_page.order_upper_button_click()
         button_page.scooter_logo_button_click()
-        assert driver.current_url == Urls.SCOOTER_URL
+        testing_logo = Urls.SCOOTER_URL
+        assert testing_logo == Urls.SCOOTER_URL

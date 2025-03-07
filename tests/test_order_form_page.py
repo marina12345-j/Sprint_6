@@ -2,7 +2,6 @@ import allure
 import pytest
 from pages.button_page import ButtonPage
 from pages.order_form import OrderForm
-from conftest import driver
 from urls import Urls
 from data import user_1, user_2
 
@@ -16,7 +15,6 @@ class TestOrderForm:
         order_form = OrderForm(driver)
         order_button = ButtonPage(driver)
         order_form.open(Urls.SCOOTER_URL)
-        order_form.cookie_click()
         order_button.order_upper_button_click()
         order_button.order_bottom_button_click()
         order_button_func = getattr(order_form, 'current_url')

@@ -18,6 +18,10 @@ class ButtonPage(BasePage):
     def wait_for_title(self):
         self.wait_for_title_is(Urls.DZEN_URL)
 
+    @allure.step('Нажимаем на кнопку  Куки все уже привыкли')
+    def cookie_click(self):
+        self.click(ButtonsClick.ACCEPT_COOKIE_BUTTON)
+
     @allure.step('Ищем вопросы, раскрываем их и фиксируем ответы')
     def click_and_get_answer(self, number):
         self.wait_and_find_element(question_locator(number)).click()

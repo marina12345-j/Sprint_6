@@ -1,7 +1,7 @@
 import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
-from locators.base_page_locators import BasePageLocators
+
 
 class BasePage:
     def __init__(self, driver):
@@ -34,6 +34,3 @@ class BasePage:
         element = self.driver.find_element(*locator)
         self.driver.execute_script('arguments[0].scrollIntoView();', element)
 
-    @allure.step('Нажимаем на кнопку  Куки все уже привыкли')
-    def cookie_click(self):
-        self.click(BasePageLocators.ACCEPT_COOKIE_BUTTON)

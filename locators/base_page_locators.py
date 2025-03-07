@@ -8,7 +8,7 @@ class BasePageLocators:
     By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")  # кнопка Заказать внизу страницы
     ACCEPT_COOKIE_BUTTON = (By.XPATH, "//*[contains(@class,'App_CookieButton__3cvqF')]")  # Кнопка  куки все уже привыкли
     YANDEX_LOGO = (By.XPATH, '//a[@class="Header_LogoYandex__3TSOI"]')  # логотип яндекс
-    SCOOTER_LOGO = (By.XPATH, '//a[@class="Header_LogoScooter__3lsAR"]')  # логотип самокат
+    SCOOTER_LOGO = (By.XPATH, "//a[@class='Header_LogoScooter__3lsAR']")  # логотип самокат
 
 
 
