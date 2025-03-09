@@ -5,9 +5,7 @@ from urls import Urls
 
 class OrderForm(BasePage):
 
-    @allure.step("Открытие страницы заполнения данных заказчика")
-    def open(self, url=Urls.SCOOTER_ORDER_URL):  # Добавляем параметр url со значением по умолчанию
-        self.driver.get(url)  # Открываем переданный URL
+
 
     @allure.step('Заполняем поле Имя')
     def set_name_input(self, name):
