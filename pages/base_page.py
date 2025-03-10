@@ -13,13 +13,8 @@ class BasePage:
 
     @allure.step('Дожидаемся смены URL страницы')
     def wait_url_changes(self, url):
-        url = self.driver.current_url
         WebDriverWait(self.driver, 10).until(expected_conditions.url_changes(url))
         return self.driver.current_url
-
-   # @allure.step('Переключаем драйвер')
-   # def switch_driver(self):
-    #    self.driver.switch_to.window(self.driver.window_handles[-1])
 
     @allure.step('Очевидно дожидаемся нужного элемента по локатору')
     def wait_and_find_element(self, locator):
@@ -27,10 +22,12 @@ class BasePage:
         return self.driver.find_element(*locator)
 
 
-   # @allure.step('после клика открывается новая вкладка, переключаемся на нее перед проверкой URL')
-   # def switch_to_new_tab(self):
-    #    WebDriverWait(self.driver, 10).until(EC.number_of_windows_to_be(2))  # Ждем открытия новой вкладки
-     #   self.driver.switch_to.window(self.driver.window_handles[-1])  # Переключаемся на новую вкладку
+    @allure.step('после клика открывается новая вкладка, переключаемся на нее перед проверкой URL')
+    def switch_to_new_tab(self):
+       WebDriverWait(self.driver, 10).until(expected_conditions.number_of_windows_to_be(2))  # Ждем открытия новой вкладки
+       new_window = self.driver.window_handles[-1]  # Получаем дескриптор новой вкладки
+       self.driver.switch_to.window(new_window) # Переключаемся на новую вкладку
+
 
     @allure.step('Кликаем по элементу с нужным локатором')
     def click(self, locator):

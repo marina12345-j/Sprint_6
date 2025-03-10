@@ -1,7 +1,7 @@
 import allure
 from locators.name_address import NameAddress
 from pages.base_page import BasePage
-from urls import Urls
+
 
 class OrderForm(BasePage):
 
