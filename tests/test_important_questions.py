@@ -30,7 +30,7 @@ class TestHomePageQuestions:
          button_page.switch_to_new_tab()
          current_url = button_page.current_url()
          button_page.wait_url_changes(current_url)
-         assert "dzen.ru" in driver.current_url
+         assert button_page.current_url().startswith(Urls.DZEN_URL)
 
 
     @allure.title('Проверка нажатия на логотип "Самокат"')

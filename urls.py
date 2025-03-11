@@ -1,4 +1,5 @@
 class Urls:
-    SCOOTER_URL = "https://qa-scooter.praktikum-services.ru/" # главная страницаhttps://qa-scooter.praktikum-services.ru/
-   # SCOOTER_ORDER_URL = "https://qa-scooter.praktikum-services.ru/order" # страница авторизации и ввода составляющих заказа
-    #DZEN_URL = 'https://dzen.ru/?yredirect=true'
+    SCOOTER_URL = "https://qa-scooter.praktikum-services.ru/" # главная страница
+
+    DZEN_URL =("https://sso.dzen.ru/install?uuid=") # Страница Дзен
+
